@@ -1,12 +1,14 @@
 //BASE
 @import './base/reset';
+@import './utils/constants';
 @import './base/typography';
 
 //UTILS
-@import './utils/constants';
 
 //LAYOUTS
 @import './layout/header';
+@import './layout/app';
+@import './layout/main/promo';
 
 //COMPONENTS
 @import './components/link';
