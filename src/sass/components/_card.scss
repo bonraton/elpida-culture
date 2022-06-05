@@ -1,0 +1,30 @@
+.card {
+    background-color: $second-color;
+    border: 1px solid $main-accent-color;
+    padding: 3.75rem 2rem 3.75rem 3.75rem;
+    border-top-left-radius: 6.25rem;
+    border-bottom-right-radius: 6.25rem;
+    display: grid;
+    gap: 1.5rem;
+    transition: all .25s ease;
+
+    &:hover {
+        box-shadow: 3px 8px 7px rgba(98, 47, 39, 0.2);
+    }
+
+    &:active {
+        background-color: $second-accent-color;
+    }
+
+
+    &__text {
+        font-size: $text-small;
+        line-height: 1.5rem;
+    }
+
+    &__span {
+        display: block;
+        font-size: $text-small;
+        color: $main-accent-color;
+    }
+}
