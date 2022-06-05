@@ -1,0 +1,29 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        font-size: $text-small;
+        line-height: 1.5rem;
+        width: 40%;
+    }
+
+    &__title {
+        width: 170%;
+        margin-top: 3rem;
+    }
+
+    &__image {
+        width: 60%;
+        position: relative;
+        z-index: -1;
+    }
+
+    &__button {
+        width: 50%;
+        margin-top: auto;
+    }
+}
