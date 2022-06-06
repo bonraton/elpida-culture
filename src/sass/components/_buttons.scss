@@ -3,16 +3,21 @@
     padding: 1.25rem 1.9rem;
     font-weight: 600;
     border-radius: .75rem;
-    border: 1px solid $main-color;
+    border: 1px solid $main-accent-color;
     letter-spacing: .1rem;
     cursor: pointer;
 
     &_light {
         color: $main-accent-color;
+        background-color: $text-light-color;
     }
 
     &_dark {
         background-color: $main-accent-color;
         color: $text-light-color;
+    }
+
+    &_grid-sized {
+        justify-self: start;
     }
 }
