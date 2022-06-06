@@ -1,0 +1,39 @@
+.input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid;
+  color: inherit;
+  padding: 0 0 0.3125rem 0;
+  font-size: $text-small;
+
+  &_error {
+    color: $validation-fault-color;
+  }
+
+  &::placeholder {
+    color: $text-grey-color;
+    font-size: $text-small;
+  }
+
+  &__label {
+    gap: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+
+    &_large {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  &__error {
+    color: $validation-fault-color;
+    font-size: .75rem;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    transform: translateY(150%);
+  }
+}
