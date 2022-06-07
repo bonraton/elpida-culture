@@ -1,0 +1,20 @@
+.team {
+    margin: 9rem 0 auto 0;
+
+    &__title {
+        margin-bottom: 2.5rem;
+    }
+
+    &__subtitle {
+        font-size: $text-medium;
+    }
+
+    &-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 1.8rem;
+    }
+}
