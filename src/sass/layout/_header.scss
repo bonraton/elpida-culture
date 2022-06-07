@@ -1,5 +1,4 @@
 .header {
-    max-width: 90%;
     margin: 1.5rem auto 2rem auto;
     display: flex;
     justify-content: space-between;
@@ -7,6 +6,7 @@
 }
 
 .navigation {
+    font-size: $text-medium;
     display: flex;
     gap: 3.125rem;
 }
