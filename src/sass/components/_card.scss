@@ -5,8 +5,18 @@
     border-top-left-radius: 6.25rem;
     border-bottom-right-radius: 6.25rem;
     display: grid;
+    align-content: start;
     gap: 1.5rem;
     transition: all .25s ease;
+    cursor: pointer;
+
+    &_image {
+        padding: 1.85rem;
+    }
+
+    &__image {
+        max-width: 100%;
+    }
 
     &:hover {
         box-shadow: 3px 8px 7px rgba(98, 47, 39, 0.2);
@@ -16,10 +26,31 @@
         background-color: $second-accent-color;
     }
 
+    &__subtitle {
+        font-weight: 600;
+        line-height: 1.5rem;
+    }
 
     &__text {
         font-size: $text-small;
         line-height: 1.5rem;
+        max-height: auto;
+        transition: max-height 1s ease;
+        visibility: visible;
+        
+        
+        &_hidden {
+            max-height: 0;
+            visibility: hidden;
+        }
+    }
+    
+    &__button {
+        border: none;
+        color: $main-accent-color;
+        font-size: $text-small;
+        justify-self: start;
+        padding: 0;
     }
 
     &__span {
