@@ -6,6 +6,10 @@
 
     &__title {
         margin-bottom: 3rem;
+        
+        &_light {
+            color: $text-light-color;
+        }
     }
 
     &__subtitle {
