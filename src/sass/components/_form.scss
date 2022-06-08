@@ -4,6 +4,15 @@
     max-width: 80%;
     margin: 0 auto 0 0;
 
+    &__title {
+        margin-bottom: 3rem;
+    }
+
+    &__subtitle {
+        font-size: $text-medium;
+        margin-bottom: 3.5rem;
+    }
+
     &_dark {
         color: black;
         border-color: black;
