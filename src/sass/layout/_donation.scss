@@ -1,0 +1,14 @@
+.donation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8rem;
+
+    &__title {
+        width: 200%;
+        padding: 3rem 0;
+    }
+
+    &__image {
+        z-index: -1;
+    }
+}
