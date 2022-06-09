@@ -1,0 +1,83 @@
+.projects {
+
+    &__header {
+        position: relative;
+        padding: 3rem 0 6.5rem;
+    }
+
+    &__subtitle {
+        color: $text-light-color;
+        font-size: $text-medium;
+        margin-top: 4rem;
+        max-width: 50%;
+        line-height: 1.8rem;
+
+    }
+
+    &__image {
+        position: absolute;
+        width: 110%;
+        top: 0;
+        left: -5%;
+        height: 100%;
+        z-index: -1;
+
+    }
+}
+
+.project {
+    margin: 5rem 0 7rem 0;
+    display: flex;
+
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__subtitle {
+        font-size: $text-medium;
+        color: $main-accent-color;
+        font-weight: 600;
+    }
+
+    &__text {
+        font-size: $text-small;
+        line-height: 1.5rem;
+        max-width: 80%;
+        flex: 1;
+    }  
+
+    &__image {
+
+        &-container {
+            max-width: 50%;
+            height: 100%;
+            position: relative;
+        }
+    }
+
+
+    &__counter-container {
+        position: absolute;
+        right: 12.5%;
+        bottom: -7.5%;
+        letter-spacing: .25rem;
+    }
+
+    &__counter {
+        font-size: $text-small;
+
+        &_current {
+            font-size: $text-medium;
+            flex: 1;
+        }
+    }
+
+    &__button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: $text-medium;
+    }
+}
