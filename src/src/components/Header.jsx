@@ -1,11 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { React } from 'react';
 import logo from '../images/logos/logo_dark.svg';
 
 export default function Header() {
   return (
     <header className="header">
-      <img className="logo" src={logo} alt="logo" />
+      <Link to="/">
+        <img className="logo" src={logo} alt="logo" />
+      </Link>
       <nav>
         <ul className="navigation">
           <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/about">About</NavLink></li>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import fbIcon from '../images/icons/facebook_icon.svg';
 import instIcon from '../images/icons/instagram_icon.svg';
 import logo from '../images/logos/logo_light.svg';
@@ -32,7 +32,9 @@ export default function Footer() {
             <img className="footer__icon" src={instIcon} alt="instagram icon" />
           </ul>
         </div>
-        <img className="footer__logo" src={logo} alt="elpida logo" />
+        <Link to="/" className="footer__logo">
+          <img className="footer__logo" src={logo} alt="elpida logo" />
+        </Link>
         <p className="footer__copyright">&#169; 2023 by CIA ELPIDA</p>
       </div>
     </footer>

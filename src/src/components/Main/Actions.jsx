@@ -10,7 +10,7 @@ const cardsArray = [
   {
     title: 'Donations',
     text: 'You can participate in buying musical instruments or paying for teaching lessons. You can as well sponsor our projects.',
-    link: '/donations',
+    link: '/donation',
   },
   {
     title: 'Projects',
