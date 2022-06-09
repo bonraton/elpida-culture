@@ -10,6 +10,14 @@
     transition: all .25s ease;
     cursor: pointer;
 
+    &_popup {
+        padding: 6rem 1.5rem;
+        justify-content: center;
+        justify-items: center;
+        position: fixed;
+        transform: translate(75%, 65%);
+    }
+
     &_image {
         padding: 1.85rem;
     }
@@ -37,6 +45,7 @@
         max-height: auto;
         transition: max-height 1s ease;
         visibility: visible;
+        max-width: 50%;
         
         
         &_hidden {

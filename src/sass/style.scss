@@ -11,8 +11,21 @@
 @import './layout/main/promo';
 @import './layout/main/actions';
 @import './layout/main/about';
+@import './layout/main/contact';
+@import './layout/footer';
+@import './layout/team';
+@import './layout/membership';
+@import './layout/donation';
+@import './layout/refugees';
+@import './layout/projects';
+@import './layout/popup';
+
 
 //COMPONENTS
 @import './components/link';
 @import './components/buttons';
 @import './components/card';
+@import './components/form';
+@import './components/input';
+@import './components/select';
+

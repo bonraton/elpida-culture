@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Form from './shared/Form';
 import Input from './shared/Input';
 import saxophoneImage from '../images/saxophone_image.png';
+import Select from './shared/Select';
 
 export default function Dontation() {
   return (
@@ -36,13 +37,14 @@ export default function Dontation() {
                 className="input"
                 labelClass="input__label"
               />
-              <Input
+              <Select className="select" title="My name" />
+              {/* <Input
                 label="Donate in the name of:"
                 name="email"
                 placeholder="example@gmail.com"
                 className="input"
                 labelClass="input__label"
-              />
+              /> */}
               <Input
                 label="Name of the organisation:"
                 name="organisation"

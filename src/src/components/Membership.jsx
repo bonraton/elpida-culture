@@ -4,6 +4,7 @@ import Footer from './Footer';
 import guitarImage from '../images/guitar_image.png';
 import Form from './shared/Form';
 import Input from './shared/Input';
+import Select from './shared/Select';
 
 export default function Membership() {
   return (
@@ -72,13 +73,14 @@ export default function Membership() {
             className="input"
             labelClass="input__label"
           />
-          <Input
+          <Select className="select select_large" title="Select your status" />
+          {/* <Input
             label="I want to be a part of the organisation*"
             name="status"
             placeholder="status"
             className="input"
             labelClass="input__label input__label_large"
-          />
+          /> */}
         </Form>
       </div>
       <Footer />

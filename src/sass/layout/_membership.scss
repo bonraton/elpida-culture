@@ -21,6 +21,7 @@
         height: 100%;
     }
 
+
     &__form {
         margin: 4.75rem 0 8rem 0;
     }
@@ -33,11 +34,13 @@
 
     &__title {
         line-height: 5rem;
+        max-width: 60%;
+        overflow-wrap: anywhere;
     }
 
     &__text {
-        max-width: 50%;
-        line-height: 1.5rem;
+        max-width: 45%;
+        line-height: 1.8rem;
         margin-top: 2rem;
     }
 }

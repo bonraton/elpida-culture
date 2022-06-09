@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Select() {
-  const [isOpened, setIsOpened] = useState(false);
-  const [option, setOption] = useState('Select Your Option');
+export default function Select(props) {
+  const { className, title } = props;
+
+  const [isOpened, setIsOpened] = useState(true);
+  const [option, setOption] = useState(title);
 
   function handleClick() {
-    setIsOpened(!isOpened);
-  }
-
-  function choseOption(e) {
-    setOption(e.target.innerHTML);
     setIsOpened(!isOpened);
   }
 
@@ -17,19 +15,21 @@ export default function Select() {
   const selectClass = isOpened ? 'select__options select__options_hidden' : 'select__options';
 
   return (
-    <div className="select">
-      <div className="select-container">
-        <button onClick={handleClick} className="select__button" type="button">&#8964;</button>
+    <div className={className}>
+      <div role="presentation" onClick={handleClick} className="select-container">
+        <span className="select__button" type="button">&#8964;</span>
         <p className="select__title">{option}</p>
         <ul className={selectClass}>
-          {/* <div className="select__options-container"> */}
           {options.map((item) => (
-            <li role="presentation" onClick={choseOption} className="select__option">{item}</li>
+            <li role="presentation" onClick={() => setOption(item)} className="select__option">{item}</li>
           ))}
-          {/* </div> */}
         </ul>
       </div>
 
     </div>
   );
 }
+Select.propTypes = {
+  className: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
