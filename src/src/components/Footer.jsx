@@ -21,7 +21,7 @@ export default function Footer() {
             <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/about">About</NavLink></li>
             <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/refugees">Refugees</NavLink></li>
             <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/membership">Membership</NavLink></li>
-            <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/donations">Donations</NavLink></li>
+            <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/donation">Donations</NavLink></li>
             <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/projects">Projects</NavLink></li>
           </ul>
         </nav>
