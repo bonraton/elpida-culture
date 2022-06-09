@@ -7,7 +7,7 @@ export default function Input(props) {
   } = props;
   return (
     <label htmlFor={name} className={labelClass}>
-      <span className="input__error">ERORR MAZAFAKA</span>
+      <span className="input__error">ERORR</span>
       {label}
       <input name={name} className={className} placeholder={placeholder} />
     </label>
