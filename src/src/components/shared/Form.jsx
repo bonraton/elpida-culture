@@ -22,7 +22,7 @@ Form.defaultProps = {
 };
 
 Form.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.arrayOf(PropTypes.element),
   btnName: PropTypes.string.isRequired,
   btnClass: PropTypes.string.isRequired,
   formClass: PropTypes.string.isRequired,
