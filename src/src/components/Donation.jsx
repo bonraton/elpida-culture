@@ -38,13 +38,6 @@ export default function Dontation() {
                 labelClass="input__label"
               />
               <Select className="select" title="My name" />
-              {/* <Input
-                label="Donate in the name of:"
-                name="email"
-                placeholder="example@gmail.com"
-                className="input"
-                labelClass="input__label"
-              /> */}
               <Input
                 label="Name of the organisation:"
                 name="organisation"

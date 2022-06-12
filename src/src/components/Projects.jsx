@@ -3,7 +3,6 @@ import Header from './Header';
 import Footer from './Footer';
 import headerImage from '../images/projects_header_image.png';
 import neuchatelImage from '../images/projects/Inagural/Neuchatel_image.png';
-import Select from './shared/Select';
 // import projectLocationImage from '../images/projects/Inagural/location_image.png';
 // import projectLogo from '../images/projects/Inagural/hem_logo.png';
 
@@ -46,7 +45,6 @@ export default function Projects() {
           </div>
         </div>
       </section>
-      <Select />
       <Footer />
     </div>
   );

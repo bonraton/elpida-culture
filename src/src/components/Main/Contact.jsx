@@ -5,7 +5,7 @@ import contactImage from '../../images/contact_image.png';
 
 export default function Contact() {
   return (
-    <section className="contact">
+    <section id="contact-form" className="contact">
       <h2 className="contact__title">Contact us</h2>
       <Form
         formClass="form form_large form_light"

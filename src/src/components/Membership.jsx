@@ -74,13 +74,6 @@ export default function Membership() {
             labelClass="input__label"
           />
           <Select className="select select_large" title="Select your status" />
-          {/* <Input
-            label="I want to be a part of the organisation*"
-            name="status"
-            placeholder="status"
-            className="input"
-            labelClass="input__label input__label_large"
-          /> */}
         </Form>
       </div>
       <Footer />

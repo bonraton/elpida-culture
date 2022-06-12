@@ -28,8 +28,19 @@ export default function Footer() {
         <div className="footer__social-container">
           <p className="footer__title">Socials</p>
           <ul className="footer__icons">
-            <img className="footer__icon" src={fbIcon} alt="facebook icon" />
-            <img className="footer__icon" src={instIcon} alt="instagram icon" />
+            <Link
+              to={{ pathname: '//facebook.com/elpidaculture/?notif_t=page_fan&notif_id=1652990004930536&ref=m_notif' }}
+              target="_blank"
+            >
+              <img className="footer__icon" src={fbIcon} alt="facebook icon" />
+            </Link>
+            <Link
+              to={{ pathname: '//instagram.com/p/Cdv5UEgIHtr/' }}
+              target="_blank"
+
+            >
+              <img className="footer__icon" src={instIcon} alt="instagram icon" />
+            </Link>
           </ul>
         </div>
         <Link to="/" className="footer__logo">

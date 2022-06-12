@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import violinImage from '../../images/violin_image.png';
-import Button from '../shared/Button';
+// import Button from '../shared/Button';
 
 export default function About() {
   return (
@@ -21,7 +22,8 @@ export default function About() {
           The Elpida Association acts as a nurturing cultural space, a peaceful
           mediator between people who need help and those who can offer it.
         </p>
-        <Button btnClass="button button_dark about__button" btnName="Learn more" />
+        {/* <Button btnClass="button button_dark about__button" btnName="Learn more" /> */}
+        <Link to="/about" className="link button button_dark about__button" btnName="Learn more">Learn more</Link>
       </div>
       <img className="about__image" alt="violin" src={violinImage} />
     </section>

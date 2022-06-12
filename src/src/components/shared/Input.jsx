@@ -9,7 +9,7 @@ export default function Input(props) {
     <label htmlFor={name} className={labelClass}>
       <span className="input__error">ERORR</span>
       {label}
-      <input name={name} className={className} placeholder={placeholder} />
+      <input name={name} className={className} placeholder={placeholder} autoComplete="off" />
     </label>
   );
 }
