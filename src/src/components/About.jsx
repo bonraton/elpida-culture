@@ -87,6 +87,7 @@ export default function About() {
               image={card.image}
               subtitle={card.subtitle}
               text={card.text}
+              key={Math.random()}
             />
           ))}
         </div>

@@ -1,8 +1,13 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import Form from '../shared/Form';
 import Input from '../shared/Input';
 
 export default function AdultsForm() {
+  const {
+    handleSubmit, register, formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <div>
       <h2 className="form__title form__title_light">Questionnaire for adults</h2>
@@ -10,63 +15,63 @@ export default function AdultsForm() {
         formClass="form form_large form_light"
         btnClass="button button_light button_grid-sized"
         btnName="Submit"
+        handleSubmit={handleSubmit(onSubmit)}
       >
         <Input
-          className="input"
+          register={register}
           name="name"
           label="Your first and last name*"
-          labelClass="input__label"
+          error={errors.name}
+          isRequired
         />
         <Input
-          className="input"
+          register={register}
           name="country"
           label="What country and city are you from?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="profession"
           label="Your profession"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="instrument"
           label="Your instrument(s)"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="aid"
           label="What kind of aid whould you like to apply for?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="part"
           label="Would you like to take part in our concerts/projects?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
+          className="input__label input__label_large"
           name="offer"
           label="Would you like to offer your services (teaching, organising projects)?"
-          labelClass="input__label input__label_large"
         />
         <Input
-          className="input"
+          register={register}
           name="adress"
           label="Your address*"
-          labelClass="input__label"
+          error={errors.adress}
+          isRequired
         />
         <Input
-          className="input"
+          register={register}
           name="phone"
           label="Your phone number*"
-          labelClass="input__label"
+          error={errors.phone}
+          isRequired
         />
         <Input
-          className="input"
+          register={register}
+          className="input__label input__label_large"
           name="message"
           label="Additional questions or coments"
           labelClass="input__label input__label_large"

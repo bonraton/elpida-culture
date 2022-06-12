@@ -1,8 +1,13 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import Form from '../shared/Form';
 import Input from '../shared/Input';
 
 export default function ChildrenForm() {
+  const {
+    handleSubmit, register, formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <div>
       <h2 className="form__title">Questionnaire for children</h2>
@@ -10,81 +15,79 @@ export default function ChildrenForm() {
         formClass="form form_large form_dark"
         btnClass="button button_dark button_grid-sized"
         btnName="Submit"
+        handleSubmit={handleSubmit(onSubmit)}
       >
         <Input
-          className="input"
+          register={register}
           name="name"
           label="Your first and last name*"
-          labelClass="input__label"
+          error={errors.name}
+          isRequired
         />
         <Input
-          className="input"
+          register={register}
           name="country"
           label="What country and city are you from?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
-          name="parents-names"
+          register={register}
+          name="parentsNames"
           label="Parents' first and last names*"
-          labelClass="input__label"
+          error={errors.parentsNames}
+          isRequired
         />
         <Input
-          className="input"
+          register={register}
           name="age"
           label="Your age"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="instrument"
           label="Musical instrument"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="education"
           label="How long have you been studying music?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="access"
           label="Do you have access to an instrument for lessons/practice?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="teacher"
           label="Do you need a teacher?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="link"
           label="Link to a recording of a performance (if available)"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="part"
           label="Would you like to take part in our concerts/projects?"
-          labelClass="input__label"
         />
         <Input
-          className="input"
+          register={register}
           name="adress"
           label="Your address*"
-          labelClass="input__label"
+          error={errors.adress}
+          isRequired
         />
         <Input
-          className="input"
+          register={register}
           name="phone"
           label="Your phone number*"
-          labelClass="input__label"
+          error={errors.phone}
+          isRequired
         />
         <Input
-          className="input"
+          className="input__label input__label_large"
+          register={register}
           name="message"
           label="Additional questions or coments"
           labelClass="input__label input__label_large"

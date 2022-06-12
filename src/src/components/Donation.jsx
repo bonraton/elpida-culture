@@ -1,16 +1,26 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './shared/Form';
 import Input from './shared/Input';
 import saxophoneImage from '../images/saxophone_image.png';
+import required from '../helpers/constant/errorMessages';
 import Select from './shared/Select';
 
-const redirectToPayPal = () => {
-  window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';
-};
+// const redirectToPayPal = () => {
+// window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';
+// console.log('clicked');
+// };
 
 export default function Dontation() {
+  const selectOptions = ['oleg', 'john', 'mamba'];
+  const {
+    handleSubmit, register, setValue, formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div>
       <Header />
@@ -23,42 +33,58 @@ export default function Dontation() {
               formClass="form"
               btnClass="button button_dark button_grid-sized"
               btnName="Donate"
-              btnClick={redirectToPayPal}
+              handleSubmit={handleSubmit(onSubmit)}
+              btnClick={handleSubmit(onSubmit)}
             >
               <Input
+                name="firstName"
                 label="First Name"
-                name="first-name"
+                labelClass="input__label"
                 placeholder="John"
-                className="input"
-                labelClass="input__label"
+                errorMessage={required.firstName}
+                register={register}
+                error={errors.firstName}
+                isRequired
               />
               <Input
+                register={register}
                 label="Last Name"
-                name="last-name"
+                name="lastName"
                 placeholder="Smith"
-                className="input"
                 labelClass="input__label"
+                errorMessage={required.lastName}
+                error={errors.lastName}
+                isRequired
               />
               <Input
+                register={register}
                 label="Email"
                 name="email"
                 placeholder="example@gmail.com"
-                className="input"
                 labelClass="input__label"
+                errorMessage={required.email}
+                error={errors.email}
+                isRequired
               />
-              <Select className="select" title="My name" />
+              <Select
+                options={selectOptions}
+                setValue={setValue}
+                register={register}
+                name="select"
+                defaultValue="Select Option"
+              />
               <Input
+                register={register}
                 label="Name of the organisation:"
                 name="organisation"
                 placeholder="Example:"
-                className="input"
                 labelClass="input__label"
               />
               <Input
+                register={register}
                 label="How did you find out about us"
                 name="message"
                 placeholder="Example: Social media"
-                className="input"
                 labelClass="input__label"
               />
             </Form>

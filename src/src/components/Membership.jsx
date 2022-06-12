@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import Header from './Header';
 import Footer from './Footer';
 import guitarImage from '../images/guitar_image.png';
@@ -7,6 +8,13 @@ import Input from './shared/Input';
 import Select from './shared/Select';
 
 export default function Membership() {
+  const {
+    handleSubmit, register, setValue, formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
+  const joinFormOptions = ['A member', 'Part of a comitee'];
+
   return (
     <div>
       <Header />
@@ -44,36 +52,51 @@ export default function Membership() {
         <p className="form__subtitle">
           Here you can fill in an application form to join our community.
         </p>
-        <Form formClass="form form_dark form_large" btnClass="button button_dark button_grid-sized" btnName="Submit">
+        <Form
+          formClass="form form_dark form_large"
+          btnClass="button button_dark button_grid-sized"
+          btnName="Submit"
+          handleSubmit={handleSubmit(onSubmit)}
+        >
           <Input
+            register={register}
             label="First Name"
-            name="first-name"
+            name="firstName"
             placeholder="John"
-            className="input"
-            labelClass="input__label"
+            error={errors.firstName}
+            isRequired
           />
           <Input
+            register={register}
             label="Last Name"
-            name="last-name"
+            name="lastName"
             placeholder="Smith"
-            className="input"
-            labelClass="input__label"
+            error={errors.lastName}
+            isRequired
           />
           <Input
+            register={register}
             label="Email"
             name="email"
             placeholder="example@gmail.com"
-            className="input"
-            labelClass="input__label"
+            error={errors.email}
+            isRequired
           />
           <Input
+            register={register}
             label="Phone Number"
             name="phone"
             placeholder="555-555-555"
-            className="input"
-            labelClass="input__label"
           />
-          <Select className="select select_large" title="Select your status" />
+          <Select
+            defaultValue="I want to be a part of the organisation"
+            name="select"
+            register={register}
+            className="select select_large"
+            title="Select your status"
+            setValue={setValue}
+            options={joinFormOptions}
+          />
         </Form>
       </div>
       <Footer />
