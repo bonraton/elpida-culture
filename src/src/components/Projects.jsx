@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import headerImage from '../images/projects_header_image.png';
 import neuchatelImage from '../images/projects/Inagural/Neuchatel_image.png';
-// import projectLocationImage from '../images/projects/Inagural/location_image.png';
-// import projectLogo from '../images/projects/Inagural/hem_logo.png';
+import projectLocationImage from '../images/projects/Inagural/location_image.png';
+import projectLogo from '../images/projects/Inagural/hem_logo.png';
 
 export default function Projects() {
-//   const projectInaguralImages = [neuchatelImage, projectLocationImage, projectLogo];
+  const projectInaguralImages = [neuchatelImage, projectLocationImage, projectLogo];
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const increaseIndex = () => (imageIndex >= projectInaguralImages.length - 1
+    ? setImageIndex(imageIndex)
+    : setImageIndex(imageIndex + 1));
+
+  const decreaseIndex = () => (imageIndex <= 0
+    ? setImageIndex(imageIndex)
+    : setImageIndex(imageIndex - 1));
+
+  const increaseButtonClass = imageIndex >= projectInaguralImages.length - 1
+    ? 'project__button project__button_hidden' : 'project__button';
+
+  const decreaseButtonClass = imageIndex === 0 ? 'project__button project__button_hidden' : 'project__button';
+
   return (
     <div>
       <Header />
@@ -36,11 +51,12 @@ export default function Projects() {
             </p>
           </div>
           <div className="project__image-container">
-            <img className="project__image" alt="project" src={neuchatelImage} />
+            <img className="project__image" alt="project" src={projectInaguralImages[imageIndex]} />
             <div className="project__counter-container">
-              <span className="project__counter project__counter_current">1</span>
+              <button onClick={decreaseIndex} className={decreaseButtonClass} type="button">&larr;</button>
+              <span className="project__counter project__counter_current">{imageIndex + 1}</span>
               <span className="project__counter">/3</span>
-              <button className="project__button" type="button"> &rarr;</button>
+              <button onClick={increaseIndex} className={increaseButtonClass} type="button"> &rarr;</button>
             </div>
           </div>
         </div>
