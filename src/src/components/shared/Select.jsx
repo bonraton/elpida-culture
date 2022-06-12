@@ -1,35 +1,48 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function Select(props) {
-  const { className, title } = props;
+  const {
+    name, defaultValue, register, className, setValue, options,
+  } = props;
 
-  const [isOpened, setIsOpened] = useState(true);
-  const [option, setOption] = useState(title);
+  const [isOpened, setIsOpened] = useState(false);
+  const [selectValue, setSelectValue] = useState(defaultValue);
 
-  function handleClick() {
+  const openDropDown = () => {
     setIsOpened(!isOpened);
-  }
+  };
 
-  const options = ['first Option', 'second Option', 'third Option'];
-  const selectClass = isOpened ? 'select__options select__options_hidden' : 'select__options';
+  const selectClass = isOpened ? 'select__options' : 'select__options select__options_hidden';
 
   return (
-    <div className={className}>
-      <div role="presentation" onClick={handleClick} className="select-container">
+    <div name={name} role="presentation" onClick={openDropDown} className={className}>
+      <div role="presentation" className="select-container">
         <span className="select__button" type="button">&#8964;</span>
-        <p className="select__title">{option}</p>
-        <ul className={selectClass}>
+        <p className="select__title">{selectValue}</p>
+        <ul {...register(name)} {...setValue(name, selectValue)} className={selectClass}>
           {options.map((item) => (
-            <li role="presentation" onClick={() => setOption(item)} className="select__option">{item}</li>
+            <li key={Math.random()} className="select__option" role="presentation" onClick={() => setSelectValue(item)}>{item}</li>
           ))}
         </ul>
       </div>
-
     </div>
   );
 }
+
+Select.defaultProps = {
+  children: null,
+  className: 'select',
+  options: [],
+};
+
 Select.propTypes = {
-  className: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+  defaultValue: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element),
+  name: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.string),
 };

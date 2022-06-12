@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Button(props) {
   const { btnClass, btnName, btnClick } = props;
   return (
-    <button onClick={btnClick} className={btnClass} type="button">{btnName}</button>
+    <button onClick={btnClick} className={btnClass} type="submit">{btnName}</button>
   );
 }
 
