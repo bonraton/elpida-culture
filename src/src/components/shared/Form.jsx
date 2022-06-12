@@ -4,13 +4,13 @@ import Button from './Button';
 
 export default function Form(props) {
   const {
-    children, btnName, btnClass, formClass,
+    children, btnName, btnClass, formClass, btnClick,
   } = props;
   return (
     <div className="form-container">
       <form type="submit" className={formClass}>
         {children}
-        <Button btnClass={btnClass} btnName={btnName} />
+        <Button btnClick={btnClick} btnClass={btnClass} btnName={btnName} />
       </form>
     </div>
   );
@@ -18,6 +18,7 @@ export default function Form(props) {
 
 Form.defaultProps = {
   children: null,
+  btnClick: null,
 };
 
 Form.propTypes = {
@@ -25,5 +26,5 @@ Form.propTypes = {
   btnName: PropTypes.string.isRequired,
   btnClass: PropTypes.string.isRequired,
   formClass: PropTypes.string.isRequired,
-
+  btnClick: PropTypes.func,
 };

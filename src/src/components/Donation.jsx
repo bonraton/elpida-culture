@@ -6,6 +6,10 @@ import Input from './shared/Input';
 import saxophoneImage from '../images/saxophone_image.png';
 import Select from './shared/Select';
 
+const redirectToPayPal = () => {
+  window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';
+};
+
 export default function Dontation() {
   return (
     <div>
@@ -15,7 +19,12 @@ export default function Dontation() {
           <h1 className="donation__title">DONATE NOW</h1>
           <p className="form__subtitle">Support Cultural Integration</p>
           <div className="donation__form">
-            <Form formClass="form" btnClass="button button_dark button_grid-sized" btnName="Donate">
+            <Form
+              formClass="form"
+              btnClass="button button_dark button_grid-sized"
+              btnName="Donate"
+              btnClick={redirectToPayPal}
+            >
               <Input
                 label="First Name"
                 name="first-name"

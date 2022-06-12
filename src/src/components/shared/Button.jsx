@@ -2,15 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Button(props) {
-  const { btnClass, btnName } = props;
+  const { btnClass, btnName, btnClick } = props;
   return (
-    <button className={btnClass} type="button">{btnName}</button>
+    <button onClick={btnClick} className={btnClass} type="button">{btnName}</button>
   );
 }
+
+Button.defaultProps = {
+  btnClick: null,
+};
 
 Button.propTypes = {
   btnClass: PropTypes.string.isRequired,
   btnName: PropTypes.string.isRequired,
+  btnClick: PropTypes.func,
 };
 
 export default Button;
