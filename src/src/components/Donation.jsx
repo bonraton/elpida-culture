@@ -6,20 +6,30 @@ import Footer from './Footer';
 import Form from './shared/Form';
 import Input from './shared/Input';
 import saxophoneImage from '../images/saxophone_image.png';
-import required from '../helpers/constant/errorMessages';
 import Select from './shared/Select';
+import { emailJsParams, donationFormParams } from '../helpers/constant/apiConstant';
+import sendEmail from '../utils/emailJs';
 
-// const redirectToPayPal = () => {
-// window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';
-// console.log('clicked');
-// };
+const redirectToPayPal = () => {
+  window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';
+};
 
 export default function Dontation() {
-  const selectOptions = ['oleg', 'john', 'mamba'];
+  const selectOptions = ['My name', 'An organization', 'Someone else', 'Anonymous', 'Other'];
   const {
     handleSubmit, register, setValue, formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const {
+      firstName, lastName, email, donationType, organisation, message,
+    } = data;
+    const { formTemplate } = emailJsParams;
+    sendEmail(
+      formTemplate,
+      donationFormParams(firstName, lastName, email, donationType, organisation, message),
+    );
+    redirectToPayPal();
+  };
 
   return (
     <div>
@@ -39,9 +49,7 @@ export default function Dontation() {
               <Input
                 name="firstName"
                 label="First Name"
-                labelClass="input__label"
                 placeholder="John"
-                errorMessage={required.firstName}
                 register={register}
                 error={errors.firstName}
                 isRequired
@@ -51,8 +59,6 @@ export default function Dontation() {
                 label="Last Name"
                 name="lastName"
                 placeholder="Smith"
-                labelClass="input__label"
-                errorMessage={required.lastName}
                 error={errors.lastName}
                 isRequired
               />
@@ -61,8 +67,6 @@ export default function Dontation() {
                 label="Email"
                 name="email"
                 placeholder="example@gmail.com"
-                labelClass="input__label"
-                errorMessage={required.email}
                 error={errors.email}
                 isRequired
               />
@@ -70,22 +74,21 @@ export default function Dontation() {
                 options={selectOptions}
                 setValue={setValue}
                 register={register}
-                name="select"
-                defaultValue="Select Option"
+                name="donationType"
+                defaultValue="Donate in the name of:"
               />
               <Input
                 register={register}
                 label="Name of the organisation:"
                 name="organisation"
                 placeholder="Example:"
-                labelClass="input__label"
               />
               <Input
                 register={register}
                 label="How did you find out about us"
                 name="message"
                 placeholder="Example: Social media"
-                labelClass="input__label"
+
               />
             </Form>
           </div>

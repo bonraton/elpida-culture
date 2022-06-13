@@ -3,12 +3,22 @@ import { useForm } from 'react-hook-form';
 import Form from '../shared/Form';
 import Input from '../shared/Input';
 import contactImage from '../../images/contact_image.png';
+import sendEmail from '../../utils/emailJs';
+import { contactFormParams, emailJsParams } from '../../helpers/constant/apiConstant';
 
 export default function Contact() {
   const {
     handleSubmit, register, formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    const { formTemplate } = emailJsParams;
+    const {
+      firstName, lastName, email, message, subject,
+    } = data;
+    sendEmail(formTemplate, contactFormParams(firstName, lastName, email, message, subject));
+  };
+
   return (
     <section id="contact-form" className="contact">
       <h2 className="contact__title">Contact us</h2>

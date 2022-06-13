@@ -6,12 +6,21 @@ import guitarImage from '../images/guitar_image.png';
 import Form from './shared/Form';
 import Input from './shared/Input';
 import Select from './shared/Select';
+import sendEmail from '../utils/emailJs';
+import { joinFormParams, emailJsParams } from '../helpers/constant/apiConstant';
 
 export default function Membership() {
   const {
     handleSubmit, register, setValue, formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    const {
+      firstName, lastName, email, phone, part,
+    } = data;
+    const { formTemplate } = emailJsParams;
+    sendEmail(formTemplate, joinFormParams(firstName, lastName, email, phone, part));
+  };
 
   const joinFormOptions = ['A member', 'Part of a comitee'];
 
@@ -90,7 +99,7 @@ export default function Membership() {
           />
           <Select
             defaultValue="I want to be a part of the organisation"
-            name="select"
+            name="part"
             register={register}
             className="select select_large"
             title="Select your status"

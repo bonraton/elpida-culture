@@ -2,12 +2,34 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../shared/Form';
 import Input from '../shared/Input';
+import sendEmail from '../../utils/emailJs';
+import { emailJsParams, adultQuestionnareFormParams } from '../../helpers/constant/apiConstant';
 
 export default function AdultsForm() {
   const {
     handleSubmit, register, formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const {
+      name, country, profession, instrument, aid, part, offer, adress, phone, message,
+    } = data;
+    const { questionFormTemplate } = emailJsParams;
+    sendEmail(
+      questionFormTemplate,
+      adultQuestionnareFormParams(
+        name,
+        country,
+        profession,
+        aid,
+        instrument,
+        part,
+        offer,
+        adress,
+        phone,
+        message,
+      ),
+    );
+  };
   return (
     <div>
       <h2 className="form__title form__title_light">Questionnaire for adults</h2>

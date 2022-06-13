@@ -2,12 +2,51 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../shared/Form';
 import Input from '../shared/Input';
+import sendEmail from '../../utils/emailJs';
+import { emailJsParams, childrenQuestionnareFormParams } from '../../helpers/constant/apiConstant';
 
 export default function ChildrenForm() {
   const {
     handleSubmit, register, formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    const {
+      name,
+      country,
+      parentsNames,
+      age,
+      instrument,
+      education,
+      access,
+      teacher,
+      link,
+      part,
+      adress,
+      phone,
+      message,
+    } = data;
+    const { questionFormTemplate } = emailJsParams;
+    sendEmail(
+      questionFormTemplate,
+      childrenQuestionnareFormParams(
+        name,
+        country,
+        parentsNames,
+        age,
+        instrument,
+        education,
+        access,
+        teacher,
+        link,
+        part,
+        adress,
+        phone,
+        message,
+      ),
+    );
+  };
+
   return (
     <div>
       <h2 className="form__title">Questionnaire for children</h2>
