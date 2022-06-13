@@ -1,6 +1,7 @@
 .about {
     display: flex;
     justify-content: space-between;
+    gap: 4rem;
 
     &-container {
         display: flex;
@@ -17,13 +18,12 @@
     }
 
     &__image {
-        width: 60%;
+        max-width: 55%;
         position: relative;
         z-index: -1;
     }
 
     &__button {
-        // width: 50%;
         align-self: flex-start;
         margin-top: auto;
     }
