@@ -9,13 +9,13 @@ import saxophoneImage from '../images/saxophone_image.png';
 import Select from './shared/Select';
 import { emailJsParams, donationFormParams } from '../helpers/constant/apiConstant';
 import sendEmail from '../utils/emailJs';
+import { donation } from '../utils/selectOptions';
 
 const redirectToPayPal = () => {
   window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';
 };
 
 export default function Dontation() {
-  const selectOptions = ['My name', 'An organization', 'Someone else', 'Anonymous', 'Other'];
   const {
     handleSubmit, register, setValue, formState: { errors },
   } = useForm();
@@ -71,9 +71,10 @@ export default function Dontation() {
                 isRequired
               />
               <Select
-                options={selectOptions}
+                options={donation}
                 setValue={setValue}
                 register={register}
+                label="Donate in the name of:"
                 name="donationType"
                 defaultValue="Donate in the name of:"
               />
