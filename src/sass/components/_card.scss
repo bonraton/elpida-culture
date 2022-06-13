@@ -7,8 +7,9 @@
     display: grid;
     align-content: start;
     gap: 1.5rem;
-    transition: all .25s ease;
+    transition: height .25s ease;
     cursor: pointer;
+    overflow: hidden;
 
     &_popup {
         padding: 6rem 1.5rem;
@@ -28,6 +29,7 @@
 
     &:hover {
         box-shadow: 3px 8px 7px rgba(98, 47, 39, 0.2);
+        max-height: 100%;
     }
 
     &:active {
@@ -45,16 +47,20 @@
         max-height: auto;
         transition: max-height 1s ease;
         visibility: visible;
+        transition: all .75s ease;
+        max-height: 800px;
         
         
         &_hidden {
             max-height: 0;
             visibility: hidden;
+            opacity: 0;
         }
     }
     
     &__button {
         border: none;
+        background: none;
         color: $main-accent-color;
         font-size: $text-small;
         justify-self: start;
