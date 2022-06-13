@@ -6,7 +6,10 @@
 }
 
 .navigation {
-    font-size: $text-medium;
     display: flex;
     gap: 3.125rem;
+
+    &__link {
+        font-size: $text-medium;
+    }
 }
