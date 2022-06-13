@@ -50,14 +50,12 @@ export default function Projects() {
               with delicious Ukrainian specialties.
             </p>
           </div>
-          <div className="project__image-container">
-            <img className="project__image" alt="project" src={projectInaguralImages[imageIndex]} />
-            <div className="project__counter-container">
-              <button onClick={decreaseIndex} className={decreaseButtonClass} type="button">&larr;</button>
-              <span className="project__counter project__counter_current">{imageIndex + 1}</span>
-              <span className="project__counter">/3</span>
-              <button onClick={increaseIndex} className={increaseButtonClass} type="button"> &rarr;</button>
-            </div>
+          <img className="project__image" alt="project" src={projectInaguralImages[imageIndex]} />
+          <div className="project__counter-container">
+            <button onClick={decreaseIndex} className={decreaseButtonClass} type="button">&larr;</button>
+            <span className="project__counter project__counter_current">{imageIndex + 1}</span>
+            <span className="project__counter">/3</span>
+            <button onClick={increaseIndex} className={increaseButtonClass} type="button"> &rarr;</button>
           </div>
         </div>
       </section>

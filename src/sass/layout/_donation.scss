@@ -2,14 +2,23 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 8rem;
+    
+    &-container {
+        width: 45%;
+    }
 
     &__title {
         width: 200%;
         padding: 3rem 0;
+        font-size: 8.5rem;
     }
 
     &__image {
         z-index: -1;
+        max-width: 55%;
+        height: auto;
+        object-fit: cover;
     }
 
+    
 }

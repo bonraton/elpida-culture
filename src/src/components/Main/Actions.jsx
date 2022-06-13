@@ -23,7 +23,12 @@ export default function Actions() {
   return (
     <section className="actions">
       {cardsArray.map((card) => (
-        <CardWithLink cardTitle={card.title} cardText={card.text} link={card.link} />
+        <CardWithLink
+          cardTitle={card.title}
+          cardText={card.text}
+          link={card.link}
+          key={Math.random()}
+        />
       ))}
     </section>
   );

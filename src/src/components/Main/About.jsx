@@ -22,7 +22,7 @@ export default function About() {
           The Elpida Association acts as a nurturing cultural space, a peaceful
           mediator between people who need help and those who can offer it.
         </p>
-        <Link to="/about" className="link button button_dark about__button" btnName="Learn more">Learn more</Link>
+        <Link to="/about" className="link button button_dark about__button">Learn more</Link>
       </div>
       <img className="about__image" alt="violin" src={violinImage} />
     </section>

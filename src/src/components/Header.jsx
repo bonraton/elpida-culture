@@ -10,11 +10,11 @@ export default function Header() {
       </Link>
       <nav>
         <ul className="navigation">
-          <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/about">About</NavLink></li>
-          <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/refugees">Refugees</NavLink></li>
-          <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/membership">Membership</NavLink></li>
-          <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/donation">Donations</NavLink></li>
-          <li><NavLink className={(navData) => (navData.isActive ? 'link link_active' : 'link')} to="/projects">Projects</NavLink></li>
+          <li><NavLink className={(navData) => (navData.isActive ? 'link link_large link_active' : 'link link_large')} to="/about">About</NavLink></li>
+          <li><NavLink className={(navData) => (navData.isActive ? 'link link_large link_active' : 'link link_large')} to="/refugees">Refugees</NavLink></li>
+          <li><NavLink className={(navData) => (navData.isActive ? 'link link_large link_active' : 'link link_large')} to="/membership">Membership</NavLink></li>
+          <li><NavLink className={(navData) => (navData.isActive ? 'link link_large link_active' : 'link link_large')} to="/donation">Donations</NavLink></li>
+          <li><NavLink className={(navData) => (navData.isActive ? 'link link_large link_active' : 'link link_large')} to="/projects">Projects</NavLink></li>
         </ul>
       </nav>
     </header>

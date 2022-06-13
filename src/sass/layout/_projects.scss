@@ -27,6 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   &__info-container {
     display: flex;
@@ -48,19 +49,13 @@
   }
 
   &__image {
-
-    &-container {
-      flex: 1;
-      height: 100%;
-      width: 100%;
-      position: relative;
-    }
+    max-width: 55%;
   }
 
   &__counter-container {
     position: absolute;
-    right: 12.5%;
-    bottom: -7.5%;
+    right: 3rem;
+    bottom: -2rem;
     letter-spacing: 0.25rem;
   }
 

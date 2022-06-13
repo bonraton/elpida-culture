@@ -3,9 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import pianoImage from '../images/piano_image.png';
 import CardWithImage from './shared/Card/CardWithImage';
-import cardsData from '../helpers/constant/cardsData';
-// import NadzeyaPhoto from '../images/Team/Nadzeya.png';
-// import Marianna from '../images/Team/Marianna.png';
+import cardsData from '../helpers/constant/CardsData';
 
 export default function About() {
   return (

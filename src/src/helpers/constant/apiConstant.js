@@ -1,8 +1,8 @@
 export const emailJsParams = {
-  serviceId: 'service_2yeuycm',
-  publicKey: '5KzlMD3g9UezcAVjw',
-  formTemplate: 'template_ihdgfji',
-  questionFormTemplate: 'template_l8mzadh',
+  serviceId: 'service_mf79kh7',
+  publicKey: 'W5jQ0ZJe2BReUZjQo',
+  formTemplate: 'template_1muvp1h',
+  questionFormTemplate: 'template_r1qfgsl',
 };
 
 export function contactFormParams(firstName, lastName, email, subject, message) {

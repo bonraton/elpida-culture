@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import fbIcon from '../images/icons/facebook_icon.svg';
 import instIcon from '../images/icons/instagram_icon.svg';
 import logo from '../images/logos/logo_light.svg';
+import { faceBookLink, instagramLink } from '../helpers/constant/links';
 
 export default function Footer() {
   return (
@@ -29,13 +30,13 @@ export default function Footer() {
           <p className="footer__title">Socials</p>
           <ul className="footer__icons">
             <Link
-              to={{ pathname: '//facebook.com/elpidaculture/?notif_t=page_fan&notif_id=1652990004930536&ref=m_notif' }}
+              to={{ pathname: faceBookLink }}
               target="_blank"
             >
               <img className="footer__icon" src={fbIcon} alt="facebook icon" />
             </Link>
             <Link
-              to={{ pathname: '//instagram.com/p/Cdv5UEgIHtr/' }}
+              to={{ pathname: instagramLink }}
               target="_blank"
 
             >
