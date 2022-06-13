@@ -9,7 +9,6 @@
     transition: box-shadow .25s ease;
     cursor: pointer;
     overflow: hidden;
-    min-height: 30rem;
     
 
     &_popup {
@@ -22,6 +21,7 @@
 
     &_image {
         padding: 1.85rem;
+        min-height: 30rem;
     }
 
     &__image {
