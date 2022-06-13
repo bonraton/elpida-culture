@@ -7,15 +7,26 @@
     letter-spacing: .1rem;
     cursor: pointer;
     text-align: center;
+    transition: all .4s ease;
 
     &_light {
         color: $main-accent-color;
         background-color: $text-light-color;
+    
+        &:hover {
+            color: #fff;
+            background-color: $main-accent-color;
+        }
     }
 
     &_dark {
         background-color: $main-accent-color;
         color: $text-light-color;
+
+        &:hover {
+            color: $main-accent-color;
+            background-color: #fff;
+        }
     }
 
     &_grid-sized {
