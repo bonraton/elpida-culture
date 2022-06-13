@@ -3,49 +3,11 @@ import Header from './Header';
 import Footer from './Footer';
 import pianoImage from '../images/piano_image.png';
 import CardWithImage from './shared/Card/CardWithImage';
-import EkaterinaPhoto from '../images/Team/Ekaterina.png';
-import NadzeyaPhoto from '../images/Team/Nadzeya.png';
-import Marianna from '../images/Team/Marianna.png';
+import cardsData from '../helpers/constant/cardsData';
+// import NadzeyaPhoto from '../images/Team/Nadzeya.png';
+// import Marianna from '../images/Team/Marianna.png';
 
 export default function About() {
-  const teamObject = [
-    {
-      title: 'Ekaterina Kornishina',
-      image: EkaterinaPhoto,
-      subtitle: 'Ekaterina Kornishina is a Russian flautist and psychologist-consultant based in Madrid/Prague',
-      text:
-    `Ekaterina Kornishina is a Russian flautist who has graduated from the Moscow
-    State Conservatory and the Reina Sofia School of Music in Madrid. In addition to her
-    performance career, she got a second degree as a consultative psychologist after defending
-    her diploma on "Influence of mass culture on the unconscious regulation of human behaviour"
-    and created the BusyMozart Project, in which she helps students and alumni of classical music
-    institutions to develop their careers based on psychology knowledge.`,
-    },
-    {
-      title: 'Ekaterina Kornishina',
-      image: NadzeyaPhoto,
-      subtitle: 'Ekaterina Kornishina is a Russian flautist and psychologist-consultant based in Madrid/Prague',
-      text:
-    `Ekaterina Kornishina is a Russian flautist who has graduated from the Moscow
-    State Conservatory and the Reina Sofia School of Music in Madrid. In addition to her
-    performance career, she got a second degree as a consultative psychologist after defending
-    her diploma on "Influence of mass culture on the unconscious regulation of human behaviour"
-    and created the BusyMozart Project, in which she helps students and alumni of classical music
-    institutions to develop their careers based on psychology knowledge.`,
-    },
-    {
-      title: 'Ekaterina Kornishina',
-      image: Marianna,
-      subtitle: 'Ekaterina Kornishina is a Russian flautist and psychologist-consultant based in Madrid/Prague',
-      text:
-    `Ekaterina Kornishina is a Russian flautist who has graduated from the Moscow
-    State Conservatory and the Reina Sofia School of Music in Madrid. In addition to her
-    performance career, she got a second degree as a consultative psychologist after defending
-    her diploma on "Influence of mass culture on the unconscious regulation of human behaviour"
-    and created the BusyMozart Project, in which she helps students and alumni of classical music
-    institutions to develop their careers based on psychology knowledge.`,
-    },
-  ];
   return (
     <div>
       <Header />
@@ -81,7 +43,7 @@ export default function About() {
         <h2 className="team__title">Out team</h2>
         <p className="team__subtitle">Three young women who co-funded the association</p>
         <div className="team-container">
-          {teamObject.map((card) => (
+          {cardsData.map((card) => (
             <CardWithImage
               title={card.title}
               image={card.image}
