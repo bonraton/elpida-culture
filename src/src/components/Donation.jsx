@@ -9,7 +9,7 @@ import saxophoneImage from '../images/saxophone_image.png';
 import Select from './shared/Select';
 import { emailJsParams, donationFormParams } from '../helpers/constant/apiConstant';
 import sendEmail from '../utils/emailJs';
-import { donation } from '../utils/selectOptions';
+import { donation } from '../helpers/constant/selectOptions';
 
 const redirectToPayPal = () => {
   window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=CC89J4NN3W25Q';

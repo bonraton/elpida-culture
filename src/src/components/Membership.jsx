@@ -7,6 +7,7 @@ import Form from './shared/Form';
 import Input from './shared/Input';
 import Select from './shared/Select';
 import sendEmail from '../utils/emailJs';
+import { organisation } from '../helpers/constant/selectOptions';
 import { joinFormParams, emailJsParams } from '../helpers/constant/apiConstant';
 
 export default function Membership() {
@@ -22,7 +23,7 @@ export default function Membership() {
     sendEmail(formTemplate, joinFormParams(firstName, lastName, email, phone, part));
   };
 
-  const joinFormOptions = ['A member', 'Part of a comitee'];
+  // const joinFormOptions = ['A member', 'Part of a comitee'];
 
   return (
     <div>
@@ -98,13 +99,14 @@ export default function Membership() {
             placeholder="555-555-555"
           />
           <Select
-            defaultValue="I want to be a part of the organisation"
+            defaultValue="Select your status"
             name="part"
             register={register}
             className="select select_large"
             title="Select your status"
             setValue={setValue}
-            options={joinFormOptions}
+            options={organisation}
+            label="I want to be a part of the organisation*"
           />
         </Form>
       </div>
