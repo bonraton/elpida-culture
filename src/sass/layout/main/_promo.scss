@@ -5,12 +5,10 @@
 
     &__image {
         @include background-image;
-    // position: absolute;
-    // width: 111%;
-    // height: 100%;
-    // top: 0;
-    // left: -5.5%;
-    // z-index: -1;   
+    }
+
+    &__subtitle {
+        max-width: 75%;
     }
 
     &__title {
