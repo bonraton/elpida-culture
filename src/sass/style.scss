@@ -4,6 +4,7 @@
 @import './base/typography';
 
 //UTILS
+@import './utils/mixins';
 
 //LAYOUTS
 @import './layout/header';
@@ -29,4 +30,5 @@
 @import './components/input';
 @import './components/select';
 @import './components/logo';
+
 

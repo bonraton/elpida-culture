@@ -16,12 +16,7 @@
     }
 
     &__image {
-        position: absolute;
-        width: 110%;
-        left: -5%;
-        top: 0;
-        z-index: -1;
-        height: 100%;
+        @include background-image;
     }
 
     &-form {
@@ -30,12 +25,7 @@
         font-size: $text-small;
 
         &__image {
-            position: absolute;
-            top: 0;
-            left: -5%;
-            width: 110%;
-            z-index: -1;
-            height: 100%;
+            @include background-image;
         }
     }
 }

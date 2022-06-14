@@ -4,12 +4,13 @@
     padding: 3rem 0 4rem 0;
 
     &__image {
-    position: absolute;
-    width: 110%;
-    height: 100%;
-    top: 0;
-    left: -5%;
-    z-index: -1;   
+        @include background-image;
+    // position: absolute;
+    // width: 111%;
+    // height: 100%;
+    // top: 0;
+    // left: -5.5%;
+    // z-index: -1;   
     }
 
     &__title {

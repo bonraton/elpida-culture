@@ -13,6 +13,7 @@
     }
  
     &__image {
+        @include background-image;
         position: absolute;
         z-index: -1;
         top: 0;

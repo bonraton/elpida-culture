@@ -1,7 +1,7 @@
 .about {
     display: flex;
     justify-content: space-between;
-    gap: 4rem;
+    // gap: 2rem;
 
     &-container {
         display: flex;
@@ -20,6 +20,7 @@
 
     &__image {
         max-width: 55%;
+        height: auto;
         position: relative;
         z-index: -1;
     }

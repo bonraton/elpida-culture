@@ -1,0 +1,8 @@
+@mixin background-image {
+    position: absolute;
+    width: 111%;
+    height: 100%;
+    top: 0;
+    left: -5.5%;
+    z-index: -1;
+}
