@@ -59,7 +59,7 @@ export default function ChildrenForm() {
         <Input
           register={register}
           name="name"
-          label="Your first and last name*"
+          label="Your first and last name"
           error={errors.name}
           isRequired
         />
@@ -71,7 +71,7 @@ export default function ChildrenForm() {
         <Input
           register={register}
           name="parentsNames"
-          label="Parents' first and last names*"
+          label="Parents' first and last names"
           error={errors.parentsNames}
           isRequired
         />
@@ -113,14 +113,14 @@ export default function ChildrenForm() {
         <Input
           register={register}
           name="adress"
-          label="Your address*"
+          label="Your address"
           error={errors.adress}
           isRequired
         />
         <Input
           register={register}
           name="phone"
-          label="Your phone number*"
+          label="Your phone number"
           error={errors.phone}
           isRequired
         />

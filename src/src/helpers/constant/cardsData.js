@@ -1,7 +1,7 @@
 import nadzeyaImage from '../../images/Team/Nadzeya.png';
 import mariannaImage from '../../images/Team/Marianna.png';
 
-const cardsData = [
+export const teamCardsData = [
   {
     image: nadzeyaImage,
     title: 'Nadzeya Kurzava',
@@ -26,4 +26,26 @@ const cardsData = [
   },
 ];
 
-export default cardsData;
+export const actionCards = [
+  {
+    title: 'Membership',
+    text: `
+    Become a member of the association for the opportunity to participate in our projects,
+    or to create your own and help people within your reach.`,
+    link: '/membership',
+  },
+  {
+    title: 'Donations',
+    text:
+    `Your contribution can help buy musical instruments or provide music lessons.
+     You can also sponsor our projects`,
+    link: '/donation',
+  },
+  {
+    title: 'Projects',
+    text:
+    `We provide musical instruments, as well as practice facilities and music teachers.
+     We organise and promote cultural forums, festivals and concerts.`,
+    link: '/projects',
+  },
+];

@@ -15,8 +15,8 @@ export default function Refugees() {
           <h1 className="refugees__title">REFUGEES</h1>
           <p className="refugees__subtitle">
             We welcome everyone who has found themselves in a new country and wants to continue
-            their activities in the world of music. Here you can fill out a form for children and
-            adults.
+            their activities in the world of music. Please find below the application forms for
+            children and for adults
           </p>
           <img className="refugees__image" alt="a man with a guitar" src={refugeesImage} />
         </div>

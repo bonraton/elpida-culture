@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import pianoImage from '../images/piano_image.png';
 import CardWithImage from './shared/Card/CardWithImage';
-import cardsData from '../helpers/constant/CardsData';
+import { teamCardsData } from '../helpers/constant/CardsData';
 
 export default function About() {
   return (
@@ -41,7 +41,7 @@ export default function About() {
         <h2 className="team__title">Out team</h2>
         <p className="team__subtitle">Three young women who co-funded the association</p>
         <div className="team-container">
-          {cardsData.map((card) => (
+          {teamCardsData.map((card) => (
             <CardWithImage
               title={card.title}
               image={card.image}

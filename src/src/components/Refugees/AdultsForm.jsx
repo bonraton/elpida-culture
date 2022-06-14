@@ -42,7 +42,7 @@ export default function AdultsForm() {
         <Input
           register={register}
           name="name"
-          label="Your first and last name*"
+          label="Your first and last name"
           error={errors.name}
           isRequired
         />
@@ -64,7 +64,7 @@ export default function AdultsForm() {
         <Input
           register={register}
           name="aid"
-          label="What kind of aid whould you like to apply for?"
+          label="What kind of aid would you like to apply for?"
         />
         <Input
           register={register}
@@ -80,14 +80,14 @@ export default function AdultsForm() {
         <Input
           register={register}
           name="adress"
-          label="Your address*"
+          label="Your address"
           error={errors.adress}
           isRequired
         />
         <Input
           register={register}
           name="phone"
-          label="Your phone number*"
+          label="Your phone number"
           error={errors.phone}
           isRequired
         />
