@@ -1,7 +1,16 @@
 .popup {
-    display: relative;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
     cursor: pointer;
-    width: 100%;
-    height: 100vh;
+    width: 110%;
+    margin-left: -5.5%;
+    height: 100%;
     background-color: rgba(0,0,0, .25);
+    color: black;
+
+    &_hidden {
+        display: none;
+    }
 }

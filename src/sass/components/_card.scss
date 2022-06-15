@@ -13,11 +13,13 @@
     
 
     &_popup {
-        padding: 6rem 1.5rem;
-        justify-content: center;
+        max-width: 50%;
+        padding: 5rem 0;
         justify-items: center;
+        align-content: center;
         position: fixed;
-        transform: translate(75%, 65%);
+        top: 25vh;
+        left: 25vw;
     }
 
     &_image {
@@ -52,6 +54,13 @@
         transition: all .75s ease;
         max-height: 800px;
         align-self: stretch;
+
+        &_popup {
+            text-align: center;
+            font-size: $text-medium;
+            max-width: 50%;
+            line-height: 2rem;
+        }
         
         
         &_hidden {
