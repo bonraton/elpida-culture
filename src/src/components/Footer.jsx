@@ -44,8 +44,8 @@ export default function Footer() {
             </Link>
           </ul>
         </div>
-        <Link to="/" className="footer__logo">
-          <img className="footer__logo" src={logo} alt="elpida logo" />
+        <Link to="/" className="logo">
+          <img className="logo" src={logo} alt="elpida logo" />
         </Link>
         <p className="footer__copyright">&#169; 2023 by CIA ELPIDA</p>
       </div>
