@@ -9,8 +9,12 @@ import Select from './shared/Select';
 import sendEmail from '../utils/emailJs';
 import { organisation } from '../helpers/constant/selectOptions';
 import { joinFormParams, emailJsParams } from '../helpers/constant/apiConstant';
+import usePopupState from '../hooks/usePopupState';
+import Popup from './shared/Popup';
 
 export default function Membership() {
+  const { isOpen, changePopupStatus } = usePopupState();
+
   const {
     handleSubmit, register, setValue, formState: { errors },
   } = useForm();
@@ -21,9 +25,8 @@ export default function Membership() {
     } = data;
     const { formTemplate } = emailJsParams;
     sendEmail(formTemplate, joinFormParams(firstName, lastName, email, phone, part));
+    changePopupStatus();
   };
-
-  // const joinFormOptions = ['A member', 'Part of a comitee'];
 
   return (
     <div>
@@ -110,6 +113,7 @@ export default function Membership() {
           />
         </Form>
       </div>
+      <Popup isOpen={isOpen} onClose={changePopupStatus} />
       <Footer />
     </div>
   );

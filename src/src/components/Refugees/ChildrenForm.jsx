@@ -4,8 +4,12 @@ import Form from '../shared/Form';
 import Input from '../shared/Input';
 import sendEmail from '../../utils/emailJs';
 import { emailJsParams, childrenQuestionnareFormParams } from '../../helpers/constant/apiConstant';
+import usePopupState from '../../hooks/usePopupState';
+import Popup from '../shared/Popup';
 
 export default function ChildrenForm() {
+  const { isOpen, changePopupStatus } = usePopupState();
+
   const {
     handleSubmit, register, formState: { errors },
   } = useForm();
@@ -45,6 +49,7 @@ export default function ChildrenForm() {
         message,
       ),
     );
+    changePopupStatus();
   };
 
   return (
@@ -132,6 +137,7 @@ export default function ChildrenForm() {
           labelClass="input__label input__label_large"
         />
       </Form>
+      <Popup onClose={changePopupStatus} isOpen={isOpen} />
     </div>
   );
 }

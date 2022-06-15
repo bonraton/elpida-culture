@@ -4,16 +4,23 @@ import Form from '../shared/Form';
 import Input from '../shared/Input';
 import sendEmail from '../../utils/emailJs';
 import { emailJsParams, adultQuestionnareFormParams } from '../../helpers/constant/apiConstant';
+import usePopupState from '../../hooks/usePopupState';
+import Popup from '../shared/Popup';
 
 export default function AdultsForm() {
+  const { isOpen, changePopupStatus } = usePopupState();
+
   const {
     handleSubmit, register, formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     const {
       name, country, profession, instrument, aid, part, offer, adress, phone, message,
     } = data;
+
     const { questionFormTemplate } = emailJsParams;
+
     sendEmail(
       questionFormTemplate,
       adultQuestionnareFormParams(
@@ -29,7 +36,9 @@ export default function AdultsForm() {
         message,
       ),
     );
+    changePopupStatus();
   };
+
   return (
     <div>
       <h2 className="form__title form__title_light">Questionnaire for adults</h2>
@@ -99,6 +108,7 @@ export default function AdultsForm() {
           labelClass="input__label input__label_large"
         />
       </Form>
+      <Popup isOpen={isOpen} onClose={changePopupStatus} />
     </div>
   );
 }

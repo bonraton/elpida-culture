@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Header from './Header';
@@ -11,6 +10,8 @@ import { emailJsParams, donationFormParams } from '../helpers/constant/apiConsta
 import sendEmail from '../utils/emailJs';
 import { donation } from '../helpers/constant/selectOptions';
 import { payPallLink } from '../helpers/constant/links';
+import usePopupState from '../hooks/usePopupState';
+import Popup from './shared/Popup';
 
 const redirectToPayPal = () => {
   window.location.href = payPallLink;
@@ -20,6 +21,9 @@ export default function Dontation() {
   const {
     handleSubmit, register, setValue, formState: { errors },
   } = useForm();
+
+  const { isOpen, changePopupStatus } = usePopupState();
+
   const onSubmit = (data) => {
     const {
       firstName, lastName, email, donationType, organisation, message,
@@ -30,6 +34,7 @@ export default function Dontation() {
       donationFormParams(firstName, lastName, email, donationType, organisation, message),
     );
     redirectToPayPal();
+    changePopupStatus();
   };
 
   return (
@@ -96,6 +101,7 @@ export default function Dontation() {
         </div>
         <img className="donation__image" alt="saxophone" src={saxophoneImage} />
       </section>
+      <Popup onClose={changePopupStatus} isOpen={isOpen} />
       <Footer />
     </div>
   );

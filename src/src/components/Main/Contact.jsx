@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import Form from '../shared/Form';
 import Input from '../shared/Input';
 import contactImage from '../../images/contact_image.png';
+import Popup from '../shared/Popup';
+import usePopupState from '../../hooks/usePopupState';
 import sendEmail from '../../utils/emailJs';
 import { contactFormParams, emailJsParams } from '../../helpers/constant/apiConstant';
 
@@ -11,7 +13,9 @@ export default function Contact() {
     handleSubmit, register, formState: { errors },
   } = useForm();
 
+  const { isOpen, changePopupStatus } = usePopupState();
   const onSubmit = (data) => {
+    changePopupStatus();
     const { formTemplate } = emailJsParams;
     const {
       firstName, lastName, email, message, subject,
@@ -67,6 +71,7 @@ export default function Contact() {
         />
       </Form>
       <img className="contact__image" alt="notes" src={contactImage} />
+      <Popup onClose={changePopupStatus} isOpen={isOpen} />
     </section>
   );
 }
