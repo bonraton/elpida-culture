@@ -1,0 +1,47 @@
+.membership {
+    position: relative;
+    padding-bottom: 6.9rem;
+
+    &__title {
+        padding: 3rem 0;
+    }
+
+    &__subtitle {
+        color: $text-light-color;
+        font-size: $text-medium;
+        max-width: 45%;
+    }
+ 
+    &__image {
+        @include background-image;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: -5%;
+        width: 110%;
+        height: 100%;
+    }
+
+
+    &__form {
+        margin: 4.75rem 0 8rem 0;
+    }
+}
+
+.article {
+        margin: 3.75rem 0 0 0;
+        color: $text-light-color;
+        max-width: 85%;
+
+    &__title {
+        line-height: 5rem;
+        max-width: 60%;
+        overflow-wrap: anywhere;
+    }
+
+    &__text {
+        max-width: 45%;
+        line-height: 1.8rem;
+        margin-top: 2rem;
+    }
+}

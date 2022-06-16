@@ -1,0 +1,23 @@
+.team {
+    margin: 9rem 0 auto 0;
+
+    &__title { 
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__subtitle {
+        font-size: $text-medium;
+        text-align: center;
+    }
+
+    &-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30%);
+    align-items: start;
+    justify-content: center;
+    gap: 1.8rem;
+    }
+}

@@ -1,0 +1,15 @@
+.header {
+    margin: 1.5rem auto 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    gap: 3.125rem;
+
+    &__link {
+        font-size: $text-medium;
+    }
+}

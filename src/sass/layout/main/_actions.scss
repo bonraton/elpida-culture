@@ -1,0 +1,9 @@
+.actions {
+    margin: 8rem 0 9.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.85rem;
+    // align-content: center;
+    align-items: stretch;
+    width: 100%;
+}

@@ -1,0 +1,14 @@
+.link {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    cursor: pointer;
+
+    &_active {
+      font-weight: 600;
+    }
+
+    &_large {
+      font-size: $text-medium;
+    }
+  }

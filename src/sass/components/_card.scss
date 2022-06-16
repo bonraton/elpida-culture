@@ -1,0 +1,88 @@
+.card {
+    background-color: $second-color;
+    border: 1px solid $main-accent-color;
+    padding: 3.75rem 2rem 3.75rem 3.75rem;
+    border-top-left-radius: 6.25rem;
+    border-bottom-right-radius: 6.25rem;
+    display: grid;
+    gap: 1.5rem;
+    transition: box-shadow .25s ease;
+    cursor: pointer;
+    overflow: hidden;
+    min-height: 15rem;
+    
+
+    &_popup {
+        max-width: 50%;
+        padding: 5rem 0;
+        justify-items: center;
+        align-content: center;
+        position: fixed;
+        top: 25vh;
+        left: 25vw;
+    }
+
+    &_image {
+        padding: 1.85rem;
+        min-height: 30rem;
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+
+    &:hover {
+        box-shadow: 3px 8px 7px rgba(98, 47, 39, 0.2);
+        max-height: 100%;
+    }
+
+    &:active {
+        background-color: $second-accent-color;
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        line-height: 1.5rem;
+    }
+
+    &__text {
+        font-size: $text-small;
+        line-height: 1.5rem;
+        max-height: auto;
+        transition: max-height 1s ease;
+        visibility: visible;
+        transition: all .75s ease;
+        max-height: 800px;
+        align-self: stretch;
+
+        &_popup {
+            text-align: center;
+            font-size: $text-medium;
+            max-width: 50%;
+            line-height: 2rem;
+        }
+        
+        
+        &_hidden {
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+    
+    &__button {
+        border: none;
+        cursor: pointer;
+        background: none;
+        color: $main-accent-color;
+        font-size: $text-small;
+        justify-self: start;
+        padding: 0;
+    }
+
+    &__span {
+        display: block;
+        font-size: $text-small;
+        color: $main-accent-color;
+    }
+}

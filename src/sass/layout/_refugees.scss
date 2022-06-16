@@ -1,0 +1,31 @@
+.refugees {
+    
+    &__header {
+        position: relative;
+        padding: 3rem 0 5rem 0;
+    }
+
+    
+    &__subtitle {
+        color: $text-light-color;
+        font-size: $text-medium;
+        max-width: 60%;
+        line-height: 2rem;
+        margin-top: 4rem;
+
+    }
+
+    &__image {
+        @include background-image;
+    }
+
+    &-form {
+        position: relative;
+        padding: 4.5rem 0 8rem 0;
+        font-size: $text-small;
+
+        &__image {
+            @include background-image;
+        }
+    }
+}
